@@ -1,4 +1,5 @@
 from ucimlrepo import fetch_ucirepo
+import matplotlib.pyplot as plt
 
 # fetch dataset
 gas_turbine_co_and_nox_emission_data_set = fetch_ucirepo(id=551)
@@ -9,6 +10,7 @@ y = gas_turbine_co_and_nox_emission_data_set.data.targets
 
 # metadata
 print(gas_turbine_co_and_nox_emission_data_set.metadata)
-
-# variable information
-print(gas_turbine_co_and_nox_emission_data_set.variables)
+print("---------------------------------------------------------------------------------------------------------------")
+# features table structure
+print(X)
+print("---------------------------------------------------------------------------------------------------------------")
