@@ -63,10 +63,16 @@ print("R^2 Score:", r2)
 
 # Calculate residuals
 residuals = y_test - y_pred
+
+total = 0
+for residual in residuals:
+    total += residual**2
+
+print(total / residuals.count())
+
 plt.figure(figsize=(10, 6))
-sns.residplot(x=y_test, y=residuals, lowess=True, scatter_kws={'alpha': 0.5}, line_kws={'color': 'red', 'lw': 2})
-plt.title('Residual Plot with Lowess Smoothing')
+sns.residplot(x=y_test, y=residuals, scatter_kws={'alpha': 0.5}, line_kws={'color': 'red', 'lw': 2})
+plt.title('Residual Plot')
 plt.xlabel('Actual TEY')
 plt.ylabel('Residuals')
-plt.axhline(y=0, color='blue', linestyle='--')  # Reference line at 0
 plt.show()
